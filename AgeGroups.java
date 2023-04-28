@@ -25,7 +25,6 @@ public enum AgeGroups {
         this.score = score;
         this.ageRange = ageRange;
         this.gradeLevel = gradeLevel;
-
     }
 
     public static String findAgeRange(int scoreCalc) {
@@ -36,5 +35,10 @@ public enum AgeGroups {
             }
         }
         return "NaN";
+    }
+
+    public static String upperAge(int scoreCalc) {
+        String ageRange = findAgeRange((int) Math.ceil(scoreCalc));
+        return ageRange.substring(ageRange.indexOf("-") + 1);
     }
 }
